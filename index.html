@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABM Personas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="spinner">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+
+
+    <div id="formularioLista">
+        <table id="tablaElementos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Sueldo</th>
+                    <th>Compras</th>
+                    <th>Ventas</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="mostrarFormularioAlta()">Agregar Elemento</button>
+    </div>
+
+    <div id="formularioABM" class="hidden">
+        <h2 id="accionABM">Alta</h2>
+        <form id="formABM">
+            <input type="hidden" id="id">
+            <div id="nombre-container">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required><br>
+            </div>
+            <div id="apellido-container">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required><br>
+            </div>
+            <div id="edad-container">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" required><br>
+            </div>
+            <div id="tipo-container">
+                <label id="tipo-label" for="tipo">Tipo:</label>
+                <select id="tipo" onchange="mostrarCamposTipo()">
+                    <option value="">Seleccione</option>
+                    <option value="empleado">Empleado</option>
+                    <option value="cliente">Cliente</option>
+                </select><br>
+            </div>
+            <div id="sueldo-container" class="hidden">
+                <label for="sueldo">Sueldo:</label>
+                <input type="number" id="sueldo"><br>
+            </div>
+            <div id="compras-container" class="hidden">
+                <label for="compras">Compras:</label>
+                <input type="number" id="compras"><br>
+            </div>
+            <div id="ventas-container" class="hidden">
+                <label for="ventas">Ventas:</label>
+                <input type="number" id="ventas"><br>
+            </div>
+            <div id="telefono-container" class="hidden">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono"><br>
+            </div>
+            <div id="botonesABM"></div>
+                <button id="aceptar-btn" type="button" onclick="aceptarABM()">Aceptar</button>
+                <button id="cancelar-btn" type="button" onclick="cancelarABM()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
